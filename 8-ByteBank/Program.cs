@@ -16,13 +16,15 @@ namespace _8_ByteBank
         static void Main(string[] args)
         {
             Client client = new Client();
-            client.cpf = "00000000";
-            client.nome = "Maicon Douglas Filipiaki";
-            client.profissao = "Arquiteto";
+            client.Cpf = "00000000";
+            client.Nome = "Maicon Douglas Filipiaki";
+            client.Profissao = "Arquiteto";
             CurrentAccount currentAccount = new CurrentAccount();
-            currentAccount.titular = client;
+            currentAccount.Titular = client;
+            // currentAccount.Balance = 10;
 
-            Console.WriteLine(currentAccount.titular.nome);
+            Console.WriteLine(currentAccount.Titular.Nome);
+            Console.WriteLine(currentAccount.Balance);
             //CurrentAccount currentAccount = new CurrentAccount();
             //currentAccount.titular = "Maicon";
 

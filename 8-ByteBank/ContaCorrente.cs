@@ -4,35 +4,52 @@ namespace _8_ByteBank
 {
     class CurrentAccount
     {
-        public Client titular;
-        public int agency;
-        public int number;
-        public double balance = 100.00;
+        public Client Titular { get; set; }
+        public int Agency { get; set; }
+        public int Number { get; set; }
+
+        private double _balance = 100.00;
+
+        public double Balance
+        {
+            get
+            {
+                return this._balance;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    this._balance = value;
+                }
+            }
+        }
+
 
         public bool Sacar(double value)
         {
-            if (value > this.balance)
+            if (value > this._balance)
             {
                 return false;
             }
-            this.balance = this.balance - value;
+            this._balance = this._balance - value;
             return true;
         }
 
         public void Depositar(double valor)
         {
-            this.balance += valor;
+            this._balance += valor;
         }
 
         public bool Transferir(double valor, CurrentAccount currentAccount)
         {
-            if (this.balance < valor)
+            if (this._balance < valor)
             {
                 return false;
             }
             else
             {
-                this.balance -= valor;
+                this._balance -= valor;
                 currentAccount.Depositar(valor);
                 return true;
             }
