@@ -19,7 +19,7 @@ namespace _8_ByteBank
             client.Cpf = "00000000";
             client.Nome = "Maicon Douglas Filipiaki";
             client.Profissao = "Arquiteto";
-            CurrentAccount currentAccount = new CurrentAccount();
+            CurrentAccount currentAccount = new CurrentAccount(1, 34234234);
             currentAccount.Titular = client;
             // currentAccount.Balance = 10;
 

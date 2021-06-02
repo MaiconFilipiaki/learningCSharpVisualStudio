@@ -26,6 +26,12 @@ namespace _8_ByteBank
         }
 
 
+        public CurrentAccount(int agency, int number)
+        {
+            this.Agency = agency;
+            this.Number = number;
+        }
+
         public bool Sacar(double value)
         {
             if (value > this._balance)
